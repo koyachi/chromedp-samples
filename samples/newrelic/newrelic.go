@@ -187,7 +187,16 @@ func (n *newrelic) fapAppPercentileActions(transactionID string, appPercentile *
 			for i, node := range textNodes[1:] {
 				ys := node.AttributeValue("y")
 				y, _ := strconv.ParseFloat(ys, 64)
-				val, _ := strconv.Atoi(strings.Replace(vals[i], "k", "000", 1))
+				// convert y axis labels like 5k, 10k or 7.5k
+				var val int
+				if strings.Contains(vals[i], ".") && strings.Contains(vals[i], "k") {
+					slices := strings.Split(vals[i], ".")
+					thousand, _ := strconv.Atoi(slices[0] + "000")
+					hundred, _ := strconv.Atoi(slices[1] + "00")
+					val = thousand + hundred
+				} else {
+					val, _ = strconv.Atoi(strings.Replace(vals[i], "k", "000", 1))
+				}
 				axisInfos[i] = axisInfo{y: y, val: val}
 			}
 			// Calculate min Y
