@@ -1,4 +1,4 @@
-module github.com/li-go/chromedp-samples
+module github.com/koyachi/chromedp-samples
 
 go 1.13
 

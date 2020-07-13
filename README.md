@@ -3,5 +3,5 @@
 ### Install using `go get`
 
 ```
-go get github.com/li-go/chromedp-samples
+go get github.com/koyachi/chromedp-samples
 ```

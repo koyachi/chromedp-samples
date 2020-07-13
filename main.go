@@ -6,7 +6,7 @@ import (
 
 	"github.com/chromedp/chromedp"
 
-	"github.com/li-go/chromedp-samples/samples"
+	"github.com/koyachi/chromedp-samples/samples"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 	defer cancel()
 
 	if err := chromedp.Run(ctx, chromedp.Tasks{
-		chromedp.Navigate("https://github.com/li-go"),
+		chromedp.Navigate("https://github.com/koyachi"),
 		samples.CaptureAction,
 	}); err != nil {
 		log.Fatal(err)

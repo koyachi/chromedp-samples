@@ -10,7 +10,7 @@ import (
 	"github.com/chromedp/chromedp"
 	"github.com/pkg/errors"
 
-	"github.com/li-go/chromedp-samples/samples"
+	"github.com/koyachi/chromedp-samples/samples"
 )
 
 type fablic struct {
